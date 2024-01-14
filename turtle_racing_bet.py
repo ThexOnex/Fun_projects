@@ -9,7 +9,7 @@ screen = Screen()
 # set the pop up size
 screen.setup(500, 400)
 UserBet = screen.textinput(
-    title="Your bet", prompt="which turtle will win the race? Enter a color: ")
+    title="Your bet", prompt="(red, purple, blue, orange, yellow, green) which turtle will win the race? Enter a color: ")
 
 turtle_colors = ["red", "purple", "blue", "orange", "yellow", "green"]
 my_turtles = []
