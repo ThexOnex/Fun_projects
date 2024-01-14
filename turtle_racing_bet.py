@@ -9,9 +9,9 @@ screen = Screen()
 # set the pop up size
 screen.setup(500, 400)
 UserBet = screen.textinput(
-    title="Your bet", prompt="(red, purple, blue, orange, yellow, green) which turtle will win the race? Enter a color: ")
+    title="Your bet", prompt="(red, purple, blue, black, yellow, green) Enter a turtle color: ")
 
-turtle_colors = ["red", "purple", "blue", "orange", "yellow", "green"]
+turtle_colors = ["red", "purple", "blue", "black", "yellow", "green"]
 my_turtles = []
 
 
@@ -37,6 +37,10 @@ while still_racing:
                 print(f"You lost! {winner} turtle is the winner")
         random_distant = random.randint(0, 10)
         turtle.forward(random_distant)
-
+        # color() method returns a tuple of color values, and the [0] index is used to access the primary color
+        # if u want to make a certain color to win
+        # if turtle.color()[0] == "color":
+        #     turtle.forward(10)
 
 screen.exitonclick()
+ 
