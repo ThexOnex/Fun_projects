@@ -1,4 +1,4 @@
-import random
+import time
 from turtle import Turtle
 import turtle
 
@@ -58,3 +58,8 @@ class Snake:
     def right(self):
         if self.head.heading() != left:
             self.head.setheading(right)
+    
+    def reseted(self):
+        for body_part in self.full_body:
+            body_part.reset()
+        self.__init__()

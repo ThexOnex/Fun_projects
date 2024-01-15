@@ -8,6 +8,12 @@ from score import Scoreboard
 def you_lost_mssg():
     my_score.clear()
     my_score.game_over()
+    # time.sleep(0.5)
+    # my_score.clear()
+    my_snake.reseted()
+    my_food.reappear()
+    Scoreboard.scores_variable = 0
+    
 
 
 screen = Screen()
@@ -15,7 +21,7 @@ screen.setup(width=600,height=600)
 screen.bgcolor("black")
 screen.title("My Snake Game :)")
 screen.tracer(0)
-# turn of animation
+# turn off animation
 
 my_snake = Snake()
 my_food = Food()
@@ -53,14 +59,14 @@ while still_playing:
 
     if my_snake.head.xcor() > 280 or my_snake.head.xcor() < -290 or my_snake.head.ycor() > 290 or my_snake.head.ycor() < -290:
         you_lost_mssg()
-        break
+        # break
 
     # snake bit itself
 
     for body_part in my_snake.full_body[1:]:
         if my_snake.head.distance(body_part) < 10:
             you_lost_mssg()
-            still_playing = False
+            # still_playing = False
 
 
 

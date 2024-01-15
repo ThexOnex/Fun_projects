@@ -1,4 +1,5 @@
 from turtle import Turtle
+import time
 
 
 class Scoreboard(Turtle):
@@ -15,9 +16,11 @@ class Scoreboard(Turtle):
 
     def game_over(self):
         self.goto(0,0)
+        self.color("white")
         self.write(f"GAME OVER !!!", align="center", font=('Ariel', 35, 'bold'))
         self.goto(0,-50)
         self.write(f"your highest score: {self.scores_variable-1}", align="center", font=('Ariel', 20, 'italic'))
+
 
 
 
