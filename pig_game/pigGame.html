@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background-color: rgb(92, 47, 67);
+            padding: 10px;
+            min-width: 500px;
+        }
+
+        .card {
+            background-color: rgb(143, 103, 121);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 500px;
+            height: 410px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .current {
+            margin-top: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgb(124, 53, 68);
+            width: 200px;
+            height: 100px;
+            border-radius: 10px;
+        }
+
+        .card-title {
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .score {
+            font-size: 50px;
+            color: rgb(248, 211, 236);
+        }
+
+        .current-text {
+            color: rgb(248, 211, 236);
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: 15px;
+        }
+
+        .current-score {
+            color: rgb(248, 211, 236);
+            font-size: 30px;
+        }
+
+        .btn-light {
+            position: absolute;
+            width: 150px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            box-shadow: 0 5px 10px black;
+            transition: width 1s ease-in-out, color 2s, top 1s;
+        }
+
+        .btn-light:hover {
+            color: rgb(236, 58, 156);
+        }
+
+        .card-group {
+            border-radius: 10px;
+            box-shadow: 0 5px 15px black;
+        }
+
+        .b-one {
+            top: 60px;
+        }
+
+        .b-one:hover {
+            width: 120px;
+            top: 80px;
+        }
+
+        .b-two {
+            top: 260px;
+            width: 120px;
+        }
+
+        .b-two:hover {
+            width: 100px;
+            top: 270px;
+        }
+
+        .b-three {
+            top: 310px;
+            width: 100px;
+        }
+
+        .b-three:hover {
+            width: 70px;
+            top: 320px;
+        }
+
+        .img-div {
+            position: absolute;
+            top: 150px;
+            z-index: 0;
+            transition: top 1s;
+        }
+
+        .img {
+            width: auto;
+            height: 90px;
+            border-radius: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media screen and (max-width: 580px) {
+            body {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+            .img-div {
+                top: 380px;
+            }
+
+            .b-one {
+                top: 410px;
+                left: -10px;
+            }
+
+            .b-one:hover {
+                width: 120px;
+                top: 410px;
+            }
+
+            .b-two {
+                top: 360px;
+                right: 0;
+                width: 120px;
+            }
+
+            .b-two:hover {
+                width: 100px;
+                top: 350px;
+            }
+
+            .b-three {
+                top: 450px;
+                width: 100px;
+                right: 0;
+            }
+
+            .b-three:hover {
+                width: 70px;
+                top: 460px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card-group">
+            <div class="card one opacity-50">
+                <div class="card-title">PLAYER 1</div>
+                <div class="card-text score s-one">0</div>
+                <div class="container current">
+                    <div class="current-text">CURRENT</div>
+                    <div class="current-score current-player-1">0</div>
+                </div>
+            </div>
+            <div class="card two opacity-50">
+                <div class="card-title">PLAYER 2</div>
+                <div class="card-text score s-two">0</div>
+                <div class="container current">
+                    <div class="current-text">CURRENT</div>
+                    <div class="current-score current-player-2">0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="container img-div">
+            <img src="images/dice.jpg" alt="" class="img dice hidden"style="height: 90px; width: auto">
+            <img src="images/one-side.jpg" alt="" class="img hidden" id="img-1">
+            <img src="images/two-side.jpg" alt="" class="img hidden" id="img-2">
+            <img src="images/three-side.jpg" alt="" class="img hidden" id="img-3">
+            <img src="images/four-side.jpg" alt="" class="img hidden" id="img-4">
+            <img src="images/five-side.jpg" alt="" class="img hidden" id="img-5">
+            <img src="images/six-side.jpg" alt="" class="img hidden" id="img-6">
+        </div>
+        <input type="button" class="btn btn-light opacity-50 rounded-pill b-one" value="New Game">
+        <input type="button" class="btn btn-light opacity-50 rounded-pill b-two" value="Roll Dice">
+        <input type="button" class="btn btn-light opacity-50 rounded-pill b-three" value="Hold">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
